@@ -3,10 +3,12 @@ source 'https://gems.ruby-china.org/'
 gem 'rails', '~> 4.2.0'
 gem 'rails-i18n', '>= 4.0.9'
 
-gem 'mysql2'
-gem 'daemons-rails'
+
 gem 'redis-rails', '>= 5.0.2'
-gem 'responders', '~> 2.0'
+
+gem 'puma'
+gem 'mysql2', '~> 0.3.21'
+
 gem 'rotp'
 gem 'json'
 gem 'jbuilder'
@@ -38,7 +40,7 @@ gem 'paper_trail', '~> 3.0.1'
 gem 'rails-observers'
 gem 'country_select', '~> 2.1.0'
 
-gem 'gon', '~> 6.2.0'
+gem 'gon', '~> 5.2.0'
 gem 'pusher'
 gem 'eventmachine', '~> 1.2.5'
 gem 'em-websocket', '~> 0.5.1'
@@ -71,10 +73,14 @@ gem 'twilio-ruby', '~> 3.11'
 gem 'unread', github: 'scatterp/unread'
 gem 'carrierwave', '~> 0.10.0'
 gem 'simple_captcha2', require: 'simple_captcha'
+
 gem 'rest-client', '~> 1.7.0'
 gem 'wx_pay'
 gem 'rqrcode'
 gem 'angular_rails_csrf'
+
+gem 'god', '~> 0.13.7', require: false
+
 group :development, :test do
   # gem 'factory_girl_rails', '>= 4.9.0'
   gem "factory_bot_rails", "~> 4.0"

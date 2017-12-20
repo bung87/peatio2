@@ -1,4 +1,5 @@
 require File.join(ENV.fetch('RAILS_ROOT'), 'config', 'environment')
+<<<<<<< HEAD
 
 running = true
 Signal.trap(:TERM) { running = false }
@@ -18,6 +19,8 @@ def process_transaction(coin, channel, tx)
 
   # Skip if transaction exists.
   return if PaymentTransaction::Normal.where(txid: tx['txid']).exists?
+=======
+>>>>>>> 425da81... Add God process monitoring for daemons (#137)
 
   # Skip zombie transactions (for which addresses don't exist).
   return unless PaymentAddress.where(currency: coin.code, address: tx['address']).exists?

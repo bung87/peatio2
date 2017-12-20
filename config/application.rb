@@ -4,7 +4,7 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env)
+Bundler.require(*Rails.groups)
 
 module Peatio
   class Application < Rails::Application
@@ -49,5 +49,6 @@ module Peatio
     config.angular_templates.inside_paths   = ['app/assets']
     config.angular_templates.markups        = %w(erb slim)
     config.angular_templates.extension      = 'html'  
+
   end
 end

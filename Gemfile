@@ -16,7 +16,7 @@ gem 'doorkeeper', '~> 1.4.2'
 gem 'omniauth', '~> 1.6.0'
 gem 'omniauth-identity', '~> 1.1.1'
 gem 'omniauth-weibo-oauth2', '~> 0.4.0'
-
+gem 'angular-rails-templates'
 gem 'figaro', '>= 0.7.0'
 gem 'hashie'
 gem 'eth'

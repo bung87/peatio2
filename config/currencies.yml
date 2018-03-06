@@ -1,0 +1,133 @@
+# after manual add currency you may need Member.all().each do |m| m.touch_accounts() end
+- id: 1
+  key: renminbi
+  sort_order: 1
+  code: cny
+  symbol: "¥"
+  coin: false
+  precision: 2
+  assets:
+    accounts:
+      -
+        bank: 'Chase Bank'
+        address: '6225 0885 6022 3501'
+        password: '111111'
+        tel: '95555'
+# - id: 9
+#   key: euro
+#   sort_order: 2
+#   code: eur
+#   symbol: "€"
+#   coin: false
+#   precision: 2
+#   assets:
+#     accounts:
+#       -
+#         bank: 'Chase Bank'
+#         address: '6225 0885 6022 3501'
+#         password: '111111'
+#         tel: '95555'
+- id: 2
+  key: satoshi
+  sort_order: 3
+  code: btc
+  symbol: "฿"
+  coin: true
+  quick_withdraw_max: 0
+  rpc: http://scatterp:magic123@127.0.0.1:18332
+  blockchain: https://blockchain.info/tx/#{txid}
+  address_url: https://blockchain.info/address/#{address}
+  assets:
+    accounts:
+      -
+        address: 1HjfnJpQmANtuW7yr1ggeDfyfe1kDK7rm3
+- id: 3
+  sort_order: 4
+  key: ether
+  code: eth
+  symbol: "฿"
+  coin: true
+  precision: 4
+  quick_withdraw_max: 0
+  rpc: http://localhost
+  blockchain: https://etherscan.io/tx/#{txid}
+  address_url: https://etherscan.io/address/#{address}
+  assets:
+    accounts:
+      -
+        address: 0x4bA2474e063Aec44e23F2Bf7Fb9e4e2878dBaB44
+# - id: 4
+#   sort_order: 5
+#   key: etc
+#   code: etc
+#   symbol: "฿"
+#   coin: true
+#   precision: 4
+#   quick_withdraw_max: 0
+#   rpc: http://localhost
+#   blockchain: https://etherscan.io/tx/#{txid}
+#   address_url: https://etherscan.io/address/#{address}
+#   assets:
+#     accounts:
+#       -
+#         address: 0x4bA2474e063Aec44e23F2Bf7Fb9e4e2878dBaB44
+# - id: 5
+#   sort_order: 6
+#   key: ltc
+#   code: ltc
+#   symbol: "฿"
+#   coin: true
+#   precision: 4
+#   quick_withdraw_max: 0
+#   rpc: http://localhost
+#   blockchain: https://etherscan.io/tx/#{txid}
+#   address_url: https://etherscan.io/address/#{address}
+#   assets:
+#     accounts:
+#       -
+#         address: 0x4bA2474e063Aec44e23F2Bf7Fb9e4e2878dBaB44
+# - id: 6
+#   sort_order: 7
+#   key: bcc
+#   code: bcc
+#   symbol: "฿"
+#   coin: true
+#   precision: 4
+#   quick_withdraw_max: 0
+#   rpc: http://localhost
+#   blockchain: https://etherscan.io/tx/#{txid}
+#   address_url: https://etherscan.io/address/#{address}
+#   assets:
+#     accounts:
+#       -
+#         address: 0x4bA2474e063Aec44e23F2Bf7Fb9e4e2878dBaB44
+# - id: 7
+#   sort_order: 8
+#   key: zec
+#   code: zec
+#   symbol: "฿"
+#   coin: true
+#   precision: 4
+#   quick_withdraw_max: 0
+#   rpc: http://localhost
+#   blockchain: https://etherscan.io/tx/#{txid}
+#   address_url: https://etherscan.io/address/#{address}
+#   assets:
+#     accounts:
+#       -
+#         address: 0x4bA2474e063Aec44e23F2Bf7Fb9e4e2878dBaB44
+# - id: 8
+#   sort_order: 9
+#   key: bts
+#   code: bts
+#   symbol: "฿"
+#   coin: true
+#   precision: 4
+#   quick_withdraw_max: 0
+#   rpc: http://localhost
+#   blockchain: https://etherscan.io/tx/#{txid}
+#   address_url: https://etherscan.io/address/#{address}
+#   assets:
+#     accounts:
+#       -
+#         address: 0x4bA2474e063Aec44e23F2Bf7Fb9e4e2878dBaB44

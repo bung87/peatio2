@@ -1,0 +1,22 @@
+doctype html
+html lang="en"
+  head
+    link rel="shortcut icon" href="/favicon.ico"
+    meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'
+    = include_gon
+    = stylesheet_link_tag "application", :media => "all"
+    = stylesheet_link_tag "landing", :media => "all"
+    = javascript_include_tag "application"
+    = javascript_include_tag "locales/#{I18n.locale}"
+    = yield(:scripts) if content_for?(:scripts)
+    = render 'shared/html5'
+    = render 'shared/meta'
+    = csrf_meta_tags
+
+  body id='#{body_id}' data-lang="#{locale_name}"
+    = render 'shared/alert'
+    #wrap
+      = render 'shared/header'
+      = yield
+      #push
+    = render 'shared/footer'

@@ -1,0 +1,47 @@
+<h2 class="panel-title">{{"funds.deposit_cny.title" | t}}</h2>
+
+
+<form id="cny_deposit" name="deposit_form" class="form form-horizontal transfer-form form-submit" ng-controller="DepositsController as depositsCtrl" ng-submit="deposit_form.$valid && createDeposit(currency)" novalidate>
+
+  <table class="table">
+ 
+    <tr class="last-row">
+      <td><label class="optional control-label">{{ "funds.deposit_cny.amount" | t}}</label><input class="form-control" id="deposit_sum" name="deposit[sum]" placeholder="{{'funds.deposit_cny.min_amount' | t}}" type="number" min="100" ng-model="deposit.amount" required></td>
+      <td class="row">
+          <ng-include  src="'funds/_qrcode.html'"></ng-include>
+      </td>
+    </tr>
+  </table>
+
+  <div class="form-group">
+    <div class="form-submit">
+      <button type="submit" class="btn btn-primary" data-loading-text="Creating..." name="commit">{{'submit' | t}}</button>
+    </div>
+  </div>
+
+</form>
+
+<br>
+<h2 class="panel-title">{{ "funds.deposit_history.title" | t }}</h2>
+<table class="table" ng-controller="DepositHistoryController as dhCtrl">
+  <tr>
+    <th>{{ "funds.deposit_history.identification" | t }}</th>
+    <th>{{ "funds.deposit_history.time" | t }}</th>
+    <th>{{ "funds.deposit_history.from" | t }}</th>
+    <th>{{ "funds.deposit_history.amount" | t }}</th>
+    <th>{{ "funds.deposit_history.state_and_action" | t }}</th>
+  </tr>
+  <tr class="deposit_item" ng-class="{ 'new-row':newRecord(deposit) }" ng-repeat="deposit in deposits | orderBy:predicate">
+    <td><span class="outlined-label">{{deposit.id}}</span></td>
+    <td>{{deposit.created_at | date:'yyyy-MM-dd HH:mm' }}</td>
+    <td>{{deposit.fund_extra}} @ {{deposit.fund_uid}}</td>
+    <td>{{deposit.amount}}</td>
+    <td>{{"funds.deposit_history." + deposit.aasm_state | t}}
+      <span ng-if="canCancel(deposit.aasm_state)">/
+        <a ng-click="cancelDeposit(deposit); $event.preventDefault()" href="#" class="cancel_link">{{ "funds.deposit_history.cancel" | t }}</a>
+      </span>
+    </td>
+  </tr>
+  <tr ng-show="canCancel(deposit.aasm_state)"><td colspan="6"><span class="help-block text-center">{{ "funds.deposit_history.no_data" | t }}</span></td></tr>
+</table>
+

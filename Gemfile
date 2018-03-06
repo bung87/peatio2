@@ -51,7 +51,7 @@ gem "jquery-rails", ">= 3.1.4"
 gem "angularjs-rails", github: "bung87/angularjs-rails"
 gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'bootstrap-wysihtml5-rails', '>= 0.3.1.24'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 4.7'
 gem 'bourbon'
 gem 'momentjs-rails', '>= 2.17.1'
 gem 'eco'

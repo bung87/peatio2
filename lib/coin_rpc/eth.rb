@@ -1,5 +1,12 @@
 module CoinRPC
   class ETH < BaseRPC
+
+    def initialize(c)
+        super c
+        @client = Ethereum::HttpClient.new(c.rpc)
+        # @client.default_account =
+    end
+
     def handle(name, *args)
       post_body = {"jsonrpc" => "2.0", 'method' => name, 'params' => args, 'id' => '1' }.to_json
       resp = JSON.parse( http_post_request(post_body) )
@@ -18,6 +25,22 @@ module CoinRPC
       http.request(request).body
     rescue Errno::ECONNREFUSED => e
       raise ConnectionRefusedError
+    end
+
+    def gettransaction(txid)
+        handle eth_getTransactionByHash,txid
+    end
+
+    def getbalance()
+
+    end
+
+    def validateaddress(address)
+
+    end
+
+    def sendtoaddress(to,amount)
+        @client.transfer_to to,amount
     end
 
     def safe_getbalance

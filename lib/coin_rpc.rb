@@ -44,6 +44,11 @@ module CoinRPC
     def listtransactions(account, number)
       raise "Not implemented"
     end
+
+    def validateaddress(address)
+      # expect address available on node
+      raise "Not implemented"
+    end
   
 
     private

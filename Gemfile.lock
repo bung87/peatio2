@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/EthWorks/ethereum.rb.git
+  revision: 867c7d95a8492d6fc73330ca74e224a35821c736
+  specs:
+    ethereum.rb (2.1.8)
+      activesupport (>= 4.0)
+      digest-sha3 (~> 1.1)
+
+GIT
   remote: git://github.com/bung87/angularjs-rails.git
   revision: 6c7f7b2a3fc2cce5fadbe6490814a6ac8b25eec6
   specs:
@@ -525,6 +533,7 @@ DEPENDENCIES
   em-websocket (~> 0.5.1)
   enumerize
   eth
+  ethereum.rb (~> 2.1.8)!
   eventmachine (~> 1.2.5)
   factory_bot_rails (~> 4.0)
   faker (~> 1.4.3)

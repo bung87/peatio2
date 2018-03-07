@@ -1,6 +1,6 @@
 module CoinRPC
-  JSONRPCError = Class.new(RuntimeError)
-  ConnectionRefusedError = Class.new(StandardError)
+  class JSONRPCError < RuntimeError; end
+  class ConnectionRefusedError < StandardError; end
 
   def self.[](currency)
     c = Currency.find_by_code(currency.to_s)
@@ -17,6 +17,34 @@ module CoinRPC
     def handle
       raise 'Not implemented'
     end
+
+    def gettransaction(txid)
+      # expect return a hash contains :confirmations models/payment_transaction.rb
+      raise "Not implemented"
+    end
+  
+    def getnewaddress(m = "payment")
+      # expect return a new coin address now @deprecated
+      raise "Not implemented"
+    end
+  
+    def getbalance
+      # expect return account balance as float
+      raise "Not implemented"
+    end
+  
+    def sendtoaddress(to,amount)
+      raise "Not implemented"
+    end
+  
+    def settxfee()
+      raise "Not implemented"
+    end
+  
+    def listtransactions(account, number)
+      raise "Not implemented"
+    end
+  
 
     private
 

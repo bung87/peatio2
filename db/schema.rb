@@ -335,22 +335,6 @@ ActiveRecord::Schema.define(version: 20150405053726) do
   add_index "read_marks", ["member_id"], name: "index_read_marks_on_member_id", using: :btree
   add_index "read_marks", ["readable_type", "readable_id"], name: "index_read_marks_on_readable_type_and_readable_id", using: :btree
 
-  create_table "running_accounts", force: true do |t|
-    t.integer  "category"
-    t.decimal  "income",      precision: 32, scale: 16, default: 0.0, null: false
-    t.decimal  "expenses",    precision: 32, scale: 16, default: 0.0, null: false
-    t.integer  "currency"
-    t.integer  "member_id"
-    t.integer  "source_id"
-    t.string   "source_type"
-    t.string   "note"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "running_accounts", ["member_id"], name: "index_running_accounts_on_member_id", using: :btree
-  add_index "running_accounts", ["source_id", "source_type"], name: "index_running_accounts_on_source_id_and_source_type", using: :btree
-
   create_table "signup_histories", force: true do |t|
     t.integer  "member_id"
     t.string   "ip"

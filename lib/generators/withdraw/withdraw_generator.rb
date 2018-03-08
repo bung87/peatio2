@@ -1,7 +1,7 @@
 class WithdrawGenerator < Rails::Generators::NamedBase
   source_root File.expand_path('../templates', __FILE__)
-  argument :code, :type => :string
-  argument :symbol, :type => :string, :default => '#'
+  # argument :code, :type => :string
+  # argument :symbol, :type => :string, :default => '#'
 
   def copy_initializer_file
     template "model.rb.erb", "app/models/withdraws/#{name.underscore}.rb"

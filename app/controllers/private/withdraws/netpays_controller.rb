@@ -1,6 +1,6 @@
 module Private
   module Withdraws
-    class <%= name.camelize.pluralize %>Controller < ::Private::Withdraws::BaseController
+    class NetpaysController < ::Private::Withdraws::BaseController
       include ::Withdraws::Withdrawable
     end
   end
